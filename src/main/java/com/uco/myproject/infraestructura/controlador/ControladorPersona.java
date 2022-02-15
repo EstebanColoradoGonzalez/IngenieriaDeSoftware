@@ -6,28 +6,30 @@ import com.uco.myproject.aplicacion.dto.DtoPersona;
 import com.uco.myproject.aplicacion.dto.DtoRespuesta;
 import com.uco.myproject.dominio.modelo.Persona;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/personas")
-public class ControladorPersona {
-
+public class ControladorPersona
+{
     private final ServicioAplicacionListarPersonas servicioListarPersonas;
     private final ServicioAplicacionGuardarPersona servicioGuardarPersona;
 
-    public ControladorPersona(ServicioAplicacionListarPersonas servicioListarPersonas, ServicioAplicacionGuardarPersona servicioGuardarPersona) {
+    public ControladorPersona(ServicioAplicacionListarPersonas servicioListarPersonas, ServicioAplicacionGuardarPersona servicioGuardarPersona)
+    {
         this.servicioListarPersonas = servicioListarPersonas;
         this.servicioGuardarPersona = servicioGuardarPersona;
     }
 
     @GetMapping
-    public List<Persona> listar() {
+    public List<Persona> listar()
+    {
         return servicioListarPersonas.ejecutar();
     }
 
     @PostMapping
-    public DtoRespuesta<Long> crear(@RequestBody DtoPersona dto) {
+    public DtoRespuesta<Long> crear(@RequestBody DtoPersona dto)
+    {
         return this.servicioGuardarPersona.ejecutar(dto);
     }
 }

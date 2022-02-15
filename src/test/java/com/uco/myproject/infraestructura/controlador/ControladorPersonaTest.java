@@ -27,8 +27,8 @@ import static org.hamcrest.core.Is.is;
 @WebMvcTest(ControladorPersona.class)
 @ContextConfiguration(classes = ApplicationMock.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-class ControladorPersonaTest {
-
+class ControladorPersonaTest
+{
     @Autowired
     private ObjectMapper objectMapper;
 
@@ -40,8 +40,8 @@ class ControladorPersonaTest {
 
     @Test
     @DisplayName("Debe crear una persona de forma exitosa y luego fallar al crear la misma")
-    void crearDuplicadaTest() throws Exception {
-
+    void crearDuplicadaTest() throws Exception
+    {
         // arrange
         var dto = new DtoPersonaTestDataBuilder().build();
 
@@ -55,17 +55,17 @@ class ControladorPersonaTest {
                 .andExpect(status().isConflict());
     }
 
-
     @Test
     @DisplayName("Debe crear una persona de forma exitosa y validar que si quedó guardada")
-    void crearTest() throws Exception {
-
+    void crearTest() throws Exception
+    {
         var dto = new DtoPersonaTestDataBuilder().build();
 
         crear(dto);
     }
 
-    private void crear(DtoPersona dto) throws Exception {
+    private void crear(DtoPersona dto) throws Exception
+    {
         // arrange
 
         // act
@@ -91,7 +91,8 @@ class ControladorPersonaTest {
 
     @Test
     @DisplayName("Debe listar las personas luego de crearlas")
-    void listarTest() throws Exception {
+    void listarTest() throws Exception
+    {
 
         var dto = new DtoPersonaTestDataBuilder().build();
 
