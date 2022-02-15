@@ -7,6 +7,8 @@ public interface RepositorioPersona
 {
     List<Persona> listar();
     Persona consultarPorId(Long id);
+    Long eliminar(Long id);
+    Long modificar(Persona persona, Long id);
     Long guardar(Persona persona);
     boolean existe(Persona persona);
 }

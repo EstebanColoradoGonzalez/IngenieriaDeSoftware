@@ -25,6 +25,20 @@ public class RepositorioPersonaEnMemoria implements RepositorioPersona
     }
 
     @Override
+    public Long eliminar(Long id)
+    {
+        personas.remove(id);
+        return id;
+    }
+
+    @Override
+    public Long modificar(Persona persona, Long id)
+    {
+        personas.put(id, persona);
+        return id;
+    }
+
+    @Override
     public Long guardar(Persona persona)
     {
         personas.put(++secuencia, persona);
