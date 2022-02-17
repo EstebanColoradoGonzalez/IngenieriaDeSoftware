@@ -16,11 +16,10 @@ public class ServicioAplicacionGuardarPersona
         this.servicioGuardarPersona = servicioGuardarPersona;
     }
 
-    public DtoRespuesta<Long> ejecutar(DtoPersona dto)
+    public DtoRespuesta<String> ejecutar(DtoPersona dto)
     {
-
         Persona persona = Persona.of(dto.getNombre(), dto.getApellido());
 
-        return new DtoRespuesta<>(this.servicioGuardarPersona.ejecutar(persona));
+        return new DtoRespuesta<>("Se creo la persona correctamente, con el codigo de identificación " + this.servicioGuardarPersona.ejecutar(persona));
     }
 }

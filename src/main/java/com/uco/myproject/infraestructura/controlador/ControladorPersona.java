@@ -34,19 +34,19 @@ public class ControladorPersona
     }
 
     @PostMapping
-    public DtoRespuesta<Long> crear(@RequestBody DtoPersona dto)
+    public DtoRespuesta<String> crear(@RequestBody DtoPersona dto)
     {
         return this.servicioGuardarPersona.ejecutar(dto);
     }
 
     @PutMapping("/{codigo}")
-    public DtoRespuesta<Long> modificar(@RequestBody DtoPersona usuario, @PathVariable Long codigo)
+    public DtoRespuesta<String> modificar(@RequestBody DtoPersona usuario, @PathVariable Long codigo)
     {
         return this.servicioModificarPersona.ejecutar(usuario, codigo);
     }
 
     @DeleteMapping("/{codigo}")
-    public DtoRespuesta<Long> eliminar(@PathVariable Long codigo)
+    public DtoRespuesta<String> eliminar(@PathVariable Long codigo)
     {
         return this.servicioEliminarPersona.ejecutar(codigo);
     }

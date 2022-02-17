@@ -16,10 +16,10 @@ public class ServicioAplicacionModificarPersona
         this.servicioModificarPersona = servicioModificarPersona;
     }
 
-    public DtoRespuesta<Long> ejecutar(DtoPersona dto, Long codigo)
+    public DtoRespuesta<String> ejecutar(DtoPersona dto, Long codigo)
     {
         Persona persona = Persona.of(dto.getNombre(), dto.getApellido());
 
-        return new DtoRespuesta<>(this.servicioModificarPersona.ejecutar(persona, codigo));
+        return new DtoRespuesta<>("Se modifico correctamente la persona con el codigo " + this.servicioModificarPersona.ejecutar(persona, codigo));
     }
 }

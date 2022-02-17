@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServicioAplicacionEliminarPersona
 {
+    private static final String MENSAJE_NO_ELIMINO = "No se pudo eliminar la persona";
     private final ServicioEliminarPersona servicioEliminarPersona;
 
     public ServicioAplicacionEliminarPersona(ServicioEliminarPersona servicioEliminarPersona)
@@ -14,8 +15,13 @@ public class ServicioAplicacionEliminarPersona
         this.servicioEliminarPersona = servicioEliminarPersona;
     }
 
-    public DtoRespuesta<Long> ejecutar(Long codigo)
+    public DtoRespuesta<String> ejecutar(Long codigo)
     {
-        return new DtoRespuesta<>(this.servicioEliminarPersona.ejecutar(codigo));
+        if(this.servicioEliminarPersona.ejecutar(codigo) <= 0)
+        {
+            throw new IllegalStateException(MENSAJE_NO_ELIMINO);
+        }
+
+        return new DtoRespuesta<>("Se elimino correctamente la persona " + this.servicioEliminarPersona.ejecutar(codigo));
     }
 }
