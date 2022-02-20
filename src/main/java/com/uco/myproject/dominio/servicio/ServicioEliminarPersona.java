@@ -1,6 +1,5 @@
 package com.uco.myproject.dominio.servicio;
 
-import com.uco.myproject.dominio.modelo.Persona;
 import com.uco.myproject.dominio.puerto.RepositorioPersona;
 import org.springframework.stereotype.Service;
 

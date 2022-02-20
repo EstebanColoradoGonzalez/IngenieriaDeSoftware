@@ -3,11 +3,10 @@ package com.uco.myproject.dominio.modelo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class PersonaTest
-{
+class PersonaTest {
+
     @Test
-    void validarCreacionExitosa()
-    {
+    void validarCreacionExitosa() {
         //patron 3a
 
         //arrange (prepara todos los datos para la prueba)
@@ -24,8 +23,7 @@ class PersonaTest
     }
 
     @Test
-    void validarCamposFaltantes()
-    {
+    void validarCamposFaltantes() {
         //patron 3a
 
         //arrange (prepara todos los datos para la prueba)
@@ -40,8 +38,7 @@ class PersonaTest
     }
 
     @Test
-    void validarCamposVacios()
-    {
+    void validarCamposVacios() {
         //patron 3a
 
         //arrange (prepara todos los datos para la prueba)

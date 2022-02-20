@@ -13,3 +13,5 @@ Ysrc/main/java/com/uco/myproject/aplicacion/servicio/ServicioAplicacionListarPer
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 `
 0src/main/java/com/uco/myproject/Application.java,3\3\333f028e237f767c90f3a404bfe984134137ddf4
+n
+>src/main/java/com/uco/myproject/aplicacion/dto/DtoPersona.java,8\f\8f8be227dccd2b41af6a544d597798e8fdec7255

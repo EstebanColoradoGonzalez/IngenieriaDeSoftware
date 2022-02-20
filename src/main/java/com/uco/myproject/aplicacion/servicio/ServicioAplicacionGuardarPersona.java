@@ -7,19 +7,18 @@ import com.uco.myproject.dominio.servicio.ServicioGuardarPersona;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServicioAplicacionGuardarPersona
-{
+public class ServicioAplicacionGuardarPersona {
+
     private final ServicioGuardarPersona servicioGuardarPersona;
 
-    public ServicioAplicacionGuardarPersona(ServicioGuardarPersona servicioGuardarPersona)
-    {
+    public ServicioAplicacionGuardarPersona(ServicioGuardarPersona servicioGuardarPersona) {
         this.servicioGuardarPersona = servicioGuardarPersona;
     }
 
-    public DtoRespuesta<String> ejecutar(DtoPersona dto)
-    {
+    public DtoRespuesta<Long> ejecutar(DtoPersona dto) {
+
         Persona persona = Persona.of(dto.getNombre(), dto.getApellido());
 
-        return new DtoRespuesta<>("Se creo la persona correctamente, con el codigo de identificación " + this.servicioGuardarPersona.ejecutar(persona));
+        return new DtoRespuesta<>(this.servicioGuardarPersona.ejecutar(persona));
     }
 }

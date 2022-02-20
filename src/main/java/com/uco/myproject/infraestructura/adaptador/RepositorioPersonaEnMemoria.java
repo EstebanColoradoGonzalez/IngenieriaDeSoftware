@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public class RepositorioPersonaEnMemoria implements RepositorioPersona
 {
+
     private long secuencia;
     private final HashMap<Long, Persona> personas = new HashMap<>();
 
@@ -25,10 +26,10 @@ public class RepositorioPersonaEnMemoria implements RepositorioPersona
     }
 
     @Override
-    public Long eliminar(Long id)
+    public Long guardar(Persona persona)
     {
-        personas.remove(id);
-        return id;
+        personas.put(++secuencia, persona);
+        return secuencia;
     }
 
     @Override
@@ -39,10 +40,10 @@ public class RepositorioPersonaEnMemoria implements RepositorioPersona
     }
 
     @Override
-    public Long guardar(Persona persona)
+    public Long eliminar(Long id)
     {
-        personas.put(++secuencia, persona);
-        return secuencia;
+        personas.remove(id);
+        return id;
     }
 
     @Override

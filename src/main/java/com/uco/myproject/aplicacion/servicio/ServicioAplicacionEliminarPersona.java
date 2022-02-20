@@ -15,13 +15,13 @@ public class ServicioAplicacionEliminarPersona
         this.servicioEliminarPersona = servicioEliminarPersona;
     }
 
-    public DtoRespuesta<String> ejecutar(Long codigo)
+    public DtoRespuesta<Long> ejecutar(Long codigo)
     {
         if(this.servicioEliminarPersona.ejecutar(codigo) <= 0)
         {
             throw new IllegalStateException(MENSAJE_NO_ELIMINO);
         }
 
-        return new DtoRespuesta<>("Se elimino correctamente la persona " + this.servicioEliminarPersona.ejecutar(codigo));
+        return new DtoRespuesta<>(this.servicioEliminarPersona.ejecutar(codigo));
     }
 }

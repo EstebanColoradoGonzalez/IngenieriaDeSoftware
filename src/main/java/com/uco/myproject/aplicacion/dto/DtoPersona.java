@@ -1,25 +1,22 @@
 package com.uco.myproject.aplicacion.dto;
 
-public class DtoPersona
-{
+public class DtoPersona {
+
     private String nombre;
     private String apellido;
 
     public DtoPersona() {}
 
-    public DtoPersona(String nombre, String apellido)
-    {
+    public DtoPersona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public String getNombre()
-    {
+    public String getNombre() {
         return nombre;
     }
 
-    public String getApellido()
-    {
+    public String getApellido() {
         return apellido;
     }
 }
