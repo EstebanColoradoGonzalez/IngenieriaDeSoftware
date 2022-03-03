@@ -28,22 +28,13 @@ class PersonaTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = null;
-        String apellido = "putencio";
+        String apellido = "castaño";
 
         //act - assert (ejecuta el metodo a probar)
 
-        if(nombre == null && apellido != null)
-        {
-            Assertions.assertEquals("El nombre no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
-                    Persona.of(nombre, apellido)
-            ).getMessage());
-        }
-        else if(nombre != null && apellido == null)
-        {
-            Assertions.assertEquals("El apellido no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
-                    Persona.of(nombre, apellido)
-            ).getMessage());
-        }
+        Assertions.assertEquals("El nombre no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
+            Persona.of(nombre, apellido)
+        ).getMessage());
     }
 
     @Test
